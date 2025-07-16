@@ -1,0 +1,76 @@
+/* Contenedor principal */
+.container {
+  max-width: 600px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+input.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.2s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/* Checkbox */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+}
+
+/* Botón */
+button.btn-primary {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+button.btn-primary:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Mensajes de error */
+.text-danger {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Bloque de datos */
+.mt-4 {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+pre {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}

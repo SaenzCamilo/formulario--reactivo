@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Formulario Reactivo</h1>
+
+  <form [formGroup]="miFormulario" (ngSubmit)="guardar()" novalidate>
+    <!-- Campo Nombre -->
+    <div class="mb-3">
+      <label class="form-label">Nombre:</label>
+      <input type="text" class="form-control" formControlName="nombre">
+
+      <div *ngIf="miFormulario.get('nombre')?.errors && miFormulario.get('nombre')?.touched" class="text-danger mt-1">
+        <div *ngIf="miFormulario.get('nombre')?.hasError('required')">El nombre es requerido</div>
+        <div *ngIf="miFormulario.get('nombre')?.hasError('minlength')">Mínimo 3 caracteres</div>
+      </div>
+    </div>
+
+    <!-- Campo Email -->
+    <div class="mb-3">
+      <label class="form-label">Email:</label>
+      <input type="email" class="form-control" formControlName="email">
+
+      <div *ngIf="miFormulario.get('email')?.errors && miFormulario.get('email')?.touched" class="text-danger mt-1">
+        <div *ngIf="miFormulario.get('email')?.hasError('required')">El email es requerido</div>
+        <div *ngIf="miFormulario.get('email')?.hasError('email')">Ingresa un email válido</div>
+      </div>
+    </div>
+
+    <!-- Campo Password -->
+    <div class="mb-3">
+      <label class="form-label">Contraseña:</label>
+      <input type="password" class="form-control" formControlName="password">
+
+      <div *ngIf="miFormulario.get('password')?.errors && miFormulario.get('password')?.touched" class="text-danger mt-1">
+        <div *ngIf="miFormulario.get('password')?.hasError('required')">La contraseña es requerida</div>
+        <div *ngIf="miFormulario.get('password')?.hasError('minlength')">Mínimo 6 caracteres</div>
+      </div>
+    </div>
+
+    <!-- Checkbox Términos -->
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="terminos" formControlName="aceptaTerminos">
+      <label class="form-check-label" for="terminos">Acepto los términos y condiciones</label>
+
+      <div *ngIf="miFormulario.get('aceptaTerminos')?.errors && miFormulario.get('aceptaTerminos')?.touched" class="text-danger mt-1">
+        Debes aceptar los términos
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="miFormulario.invalid">Enviar</button>
+  </form>
+
+  <div class="mt-4">
+    <h3>Datos del formulario:</h3>
+    <pre>{{ miFormulario.value | json }}</pre>
+    <h3>Estado del formulario:</h3>
+    <pre>Válido: {{ miFormulario.valid }} | Touched: {{ miFormulario.touched }}</pre>
+  </div>
+</div>
